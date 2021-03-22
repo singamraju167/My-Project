@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Transaction Form</title>
+</head>
+<body>
+    <form method="post">
+        {% csrf_token %}
+        {% for field in form %}
+            {{ field.label }}<br><br>
+            {{ field }}<br><br>
+        {% endfor %}
+        <button type="submit">Submit</button>
+    </form>
+</body>
+</html>

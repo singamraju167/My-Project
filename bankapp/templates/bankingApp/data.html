@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Data</title>
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'css/index.css' %}">
+</head>
+<style>
+
+th, td {
+  padding: 5px;
+  text-align: left;
+}
+</style>
+<body>
+<div class = "container">
+    <img src = "{% static 'images/banking.jpeg' %}">
+</div>
+
+    {% csrf_token %}
+    <table style="width:100%">
+        <tr>
+            <th>ID</th>
+            <th>Name</th>
+            <th>Phone Number</th>
+            <th>Email</th>
+            <th>Amount added</th>
+            <th>Balance</th>
+        </tr>
+        <tr>
+            <td>{{ data.id }}</td>
+            <td>{{ data.name }}</td>
+            <td>{{ data.phone_no }}</td>
+            <td>{{ data.email }}</td>
+            <td>{{ data.transact_amt }}</td>
+            <td>{{ data.balance }}</td>
+        </tr>
+    </table>
+    <a href="{% url 'transfer_money' user_id %}">Add Money</a>
+</body>
+</html>

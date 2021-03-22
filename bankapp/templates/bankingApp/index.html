@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>View Customers</title>
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'css/index.css' %}">
+</head>
+
+<!--<style>
+    th, td {
+  padding: 5px;
+  text-align: left;
+}
+</style>-->
+<body>
+
+<div class = "container">
+    <img src = "{% static 'images/banking.jpeg' %}">
+</div>
+<div class= "data">
+    <table>
+        <tr>
+            <th>ID</th>
+            <th>Name</th>
+            <th>Phone Number</th>
+            <th>Email</th>
+            <th>Account</th>
+            <th>Added Amount</th>
+            <th>Balance</th>
+        </tr>
+        {% for field in all_customers %}
+            <tr>
+                <td> {{ field.id }} </td>
+                <td> <a href="{% url 'details' field.id %}">{{ field.name }}</a></td>
+                <td> {{ field.phone_no }} </td>
+                <td> {{ field.email }} </td>
+                <td> {{ field.account }} </td>
+                <td> {{ field.transact_amt }} </td>
+                <td> {{ field.balance }} </td>
+            </tr>
+        {% endfor %}
+    </table>
+
+   
+</div>
+</body>
+</html>
+

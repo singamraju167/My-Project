@@ -1,0 +1,92 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400&display=swap');
+* {
+    box-sizing: border-box;
+}
+
+body {
+    flex-direction: column;
+    font-family: "Poppins", sans-serif;
+    margin: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    min-height: 100vh;
+}
+
+.container img {
+    width: 100%;
+    height: 500px;
+}
+
+h3 {
+    align-items: center;
+    justify-content: center;
+    display: flex;
+    color: green;
+    padding: 19rem;
+}
+
+table {
+    color: white;
+    width: 100%;
+    height: 10%;
+}
+
+th {
+    font-size: 20px;
+    text-align: left;
+    padding: 8px;
+    background-color: #0528F2;
+}
+
+td {
+    font-size: 15px;
+    text-align: left;
+    padding: 8px;
+}
+
+tr a {
+    text-decoration: none;
+    color: white;
+}
+
+tr:nth-child(odd) {
+    background-color: #00216B;
+}
+
+tr:nth-child(even) {
+    background-color: #011140;
+}
+
+a {
+    margin: 1rem;
+    text-decoration: none;
+    text-align: center;
+    justify-content: center;
+}
+
+.form_data {
+    text-align: center;
+    justify-content: center;
+    display: flex;
+}
+
+form {
+    background-color: #547aeb;
+    justify-content: center;
+    text-align: center;
+    height: 200px;
+    width: 500px;
+    display: flex;
+    flex-direction: column;
+    border-radius: 10px;
+}
+
+form input {
+    width: 100px;
+    height: 30px;
+    align-items: center;
+    justify-content: center;
+    display: flex;
+    margin-left: 200px;
+}

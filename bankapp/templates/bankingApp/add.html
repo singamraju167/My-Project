@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Add Money</title>
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'css/index.css' %}">
+</head>
+<body>
+
+<div class = "container">
+    <img src = "{% static 'images/banking.jpeg' %}">
+</div>
+
+<div class="form_data">
+    <form method = "post">
+        {% csrf_token %}
+        {{ form }} <br><br>
+        <input type = "submit" class="submit">
+    </form>
+</body>
+</body>
+</html>

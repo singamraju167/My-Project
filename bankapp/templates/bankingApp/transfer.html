@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Transfer Money</title>
+    {% load static %}
+    
+    <link rel="stylesheet" href="{% static 'css/index.css' %}">
+</head>
+<body>
+
+<div class = "container">
+    <img src = "{% static 'images/banking.jpeg' %}">
+</div>
+<h2 style="text-align:center;">Select any customer</h2>
+<div class= "data">
+    <table>
+        <tr>
+            <th>ID</th>
+            <th>Name</th>
+            <th>Phone Number</th>
+            <th>Email</th>
+            <th>Account</th>
+            <th>Added Amount</th>
+            <th>Balance</th>
+            <th>Add Amount?</th>
+        </tr>
+        {% for field in all_customers %}
+            {% if field.name != username %}
+                <tr>
+                    <td> {{ field.id }} </td>
+                    <td> <a href="{% url 'add' field.id user_id %}">{{ field.name }}</a></td>
+                    <td> {{ field.phone_no }} </td>
+                    <td> {{ field.email }} </td>
+                    <td> {{ field.account }} </td>
+                    <td> {{ field.transact_amt }} </td>
+                    <td> {{ field.balance }} </td>
+                    <td><a href="{% url 'add' field.id user.id %}">Add</a></td>
+
+                </tr>
+            {% endif %}
+        {% endfor %}
+    </table>
+</div>
+
+</body>
+</html>
